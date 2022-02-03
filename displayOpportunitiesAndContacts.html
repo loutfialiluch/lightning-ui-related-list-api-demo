@@ -1,0 +1,21 @@
+<template>
+    <lightning-card if:true={account} title={account.Name} icon-name="standard:account">
+        <lightning-accordion active-section-name="Contacts">
+            <lightning-accordion-section if:true={contacts} name="Contacts" label="Contacts">
+                <ul>
+                    <template for:each={contacts} for:item="contact">
+                        <li style="padding: 0.2rem 0.5rem; font-weight: 500; font-size: 0.9rem" key={contact.Id}>- {contact.Name}</li>
+                    </template>
+                </ul>
+            </lightning-accordion-section>
+
+            <lightning-accordion-section if:true={opportunities} name="Opportunities" label="Opportunities">
+                <ul>
+                    <template for:each={opportunities} for:item="opportunity">
+                        <li style="padding: 0.2rem 0.5rem; font-weight: 500; font-size: 0.9rem" key={opportunity.Id}>- {opportunity.Name}</li>
+                    </template>
+                </ul>
+            </lightning-accordion-section>
+        </lightning-accordion>
+    </lightning-card>
+</template>
